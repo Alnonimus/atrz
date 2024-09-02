@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Khusus</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .input-container, .message-container {
+            display: none;
+        }
+        .input-container.active, .message-container.active {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-container input {
+            padding: 10px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .input-container button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .input-container button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            font-size: 24px;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #e6f7ff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .footer {
+            font-size: 14px;
+            color: #888;
+            margin-top: 10px;
+            animation: fadeIn 2s ease-in-out 1s;
+        }
+        .heart {
+            font-size: 50px;
+            color: #ff6f61;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Halaman Input Nama -->
+        <div class="input-container active" id="input-container">
+            <h2>Masukkan Nama Anda</h2>
+            <input type="text" id="name-input" placeholder="Nama Anda" />
+            <button onclick="submitName()">Kirim</button>
+        </div>
+
+        <!-- Halaman Pesan -->
+        <div class="message-container" id="message-container">
+            <div class="message" id="message">
+                Selamat pagi, <span id="name-display"></span>!<br><br>
+                Semoga harimu menyenangkan dan penuh kebahagiaan, saya berharap hari ini samapai seterusnya saya bisa menemanimu dan mencintaimu. 😊
+            </div>
+            <div class="heart">❤️</div>
+            <div class="footer">
+                Dari: [Alnonimus]
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
